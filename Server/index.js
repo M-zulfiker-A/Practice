@@ -3,6 +3,7 @@ import mongoose from "mongoose"
 import bodyParser from "body-parser"
 import CommentRouter from "./Router/CommentRouter.js"
 import UserRouter from "./Router/UserRouter.js"
+import PostsRouter from "./Router/PostRouter.js"
 import dotenv from "dotenv"
 import { log } from "console"
 
@@ -25,6 +26,7 @@ app.use("/",(req, res, next)=>{
 })
 
 app.use("/api/comments",CommentRouter)
+app.use("/api/posts",PostsRouter)
 app.use("/api/users",UserRouter)
 app.use((err, req, res, next)=>{
     res.json({
