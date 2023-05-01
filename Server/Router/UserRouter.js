@@ -61,5 +61,17 @@ router.put("/:userId",async(req, res, next)=>{
     }
 })
 
+router.delete("/:userid",async (req,res, next)=>{
+    const userId = req.params.userid
+    try{
+        await User.findByIdAndDelete(userId)
+        res.json({
+            message : 'User deleted',
+        })
+    }catch(err){
+        next(err)
+    }
+})
+
 
 export default router

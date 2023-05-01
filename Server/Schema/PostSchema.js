@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
-export default PostSchema = mongoose.Schema(
+const PostSchema = mongoose.Schema(
 {
     title: {
         type: String,
@@ -24,3 +24,5 @@ export default PostSchema = mongoose.Schema(
       default: Date.now
     }
 })
+
+export const Post = mongoose.model("POSTs",PostSchema)
